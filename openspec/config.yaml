@@ -1,0 +1,31 @@
+schema: spec-driven
+
+# Change Numbering Rules
+# All new changes MUST follow the numbering format: <prefix>-<sequence>
+# The sequence counter is tracked in openspec/.change-counter
+change_numbering:
+  enabled: true
+  prefix: "01"
+  sequence_digits: 4          # zero-padded to 4 digits (e.g. 0001, 0002)
+  format: "{prefix}-{sequence}"  # results in: 01-0001, 01-0002, ...
+  counter_file: "openspec/.change-counter"  # persists the last used sequence number
+
+# Project context (optional)
+# This is shown to AI when creating artifacts.
+# Add your tech stack, conventions, style guides, domain knowledge, etc.
+context: |
+  Project: 智慧藥盒系統 (Smart Pillbox IoT)
+  Tech stack: ESP32, Python Flask, SQLite3, Streamlit
+  Domain: AIoT / Healthcare
+  Change numbering: All changes must be named as "01-XXXX-<kebab-description>"
+    where XXXX is a 4-digit zero-padded sequence from the counter file.
+    Example: 01-0001-add-sensor-api, 01-0002-build-dashboard
+
+# Per-artifact rules (optional)
+# Add custom rules for specific artifacts.
+#   rules:
+#     proposal:
+#       - Keep proposals under 500 words
+#       - Always include a "Non-goals" section
+#     tasks:
+#       - Break tasks into chunks of max 2 hours
